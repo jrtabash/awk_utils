@@ -1,0 +1,10 @@
+Order:id=abc,action=Sell,quantity=10,price=2.50
+Order:id=xyz,action=Buy,quantity=5,price=2.52
+Execute:id=abc,otherId=xyx,quantity=5,price=2.50
+Order:id=123,action=Sell,quantity=10,price=2.51
+Order:id=456,action=Sell,quantity=10,price=2.49
+Order:id=ioc,action=Buy,quantity=20,price=2.52
+Execute:id=456,otherId=ioc,quantity=10,price=2.49
+Execute:id=abc,otherId=ioc,quantity=5,price=2.50
+Execute:id=123,otherId=ioc,quantity=5,price=2.51
+Cancel:id=123
