@@ -8,8 +8,8 @@ Parse messages formatted as:
   <type>:<name>=<value>,<name>=<value>...
 
 Expects the user gawk script to @include parse_kvpmsg.awk, and to define
-an onMessage function which will be called with the parsed message:
-  onMessage(type, nameValueMap)
+an onKVPMessage function which will be called with the parsed message:
+  onKVPMessage(type, nameValueMap)
 
 The user script calls parseKVPMessage with each read line:
   parseKVPMessage($0)
