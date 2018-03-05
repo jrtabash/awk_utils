@@ -1,9 +1,20 @@
 # awk_utils
 
-A set of awk utilities intended for usage from other gawk scripts.
+A set of awk utilities.
+
+make_histo
+----------
+Given a sequence of tokens, create a histogram of the distribtion of the tokens.
+
+Example output given input containing the tokens xyz, abc, and rpq:
+abc     81      ==================================================
+xyz     54      =================================
+rpq     27      ================
 
 parse_kvpmsg
 ------------
+Intended to be used from other gawk scripts.
+
 Parse messages formatted as:
   <type>:<name>=<value>,<name>=<value>...
 
