@@ -4,12 +4,15 @@ A set of awk utilities.
 
 make_histo
 ----------
-Given a sequence of tokens, create a histogram of the distribtion of the tokens.
+Given a sequence of tokens, or a sequence of comma separated tokens and values,
+create a histogram of the distribtion of the tokens.
 
 Example output given input containing the tokens xyz, abc, and rpq:
-abc     81      ==================================================
-xyz     54      =================================
-rpq     27      ================
+  abc     81      ==================================================
+  xyz     54      =================================
+  rpq     27      ================
+
+Utility folder contains sample input files.
 
 parse_kvpmsg
 ------------
@@ -24,3 +27,6 @@ an onKVPMessage function which will be called with the parsed message:
 
 The user script calls parseKVPMessage with each read line:
   parseKVPMessage($0)
+
+Utility folder contains samle input file and 2 sample scripts that
+process the sample data.

@@ -18,7 +18,12 @@ BEGIN {
 }
 
 {
-    histo[$1]++
+    if (NF > 1) {
+        histo[$1] += $2
+    }
+    else {
+        histo[$1]++
+    }
 }
 
 END {
