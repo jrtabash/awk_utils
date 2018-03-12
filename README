@@ -14,6 +14,21 @@ Example output given input containing the tokens xyz, abc, and rpq:
 
 Utility folder contains sample input files.
 
+calc_stat
+---------
+Given a sequence of numbers, calculate count, sum, average, median, minimum
+and maximum.
+
+This awk script uses gawk's asort, and hence requires gawk.
+
+Sample output:
+  cnt: 6
+  sum: 96.6
+  avg: 16.1
+  med: 10.5
+  min: -1
+  max: 42
+
 parse_kvpmsg
 ------------
 Intended to be used from other gawk scripts.
