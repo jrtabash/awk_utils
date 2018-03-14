@@ -7,7 +7,7 @@ BEGIN {
     median = 0
     min = 0
     max = 0
-    var = 0
+    variance = 0
 }
 
 {
@@ -34,11 +34,11 @@ END {
         average = sum / count
 
         for (i in values) {
-            var += ((values[i] - average) ^ 2)
+            variance += ((values[i] - average) ^ 2)
         }
 
         if (n > 1) {
-            var = var / (n - 1)
+            variance = variance / (n - 1)
         }
     }
 
@@ -48,6 +48,6 @@ END {
     print "med: " median
     print "min: " min
     print "max: " max
-    print "var: " var
-    print "std: " sqrt(var)
+    print "var: " variance
+    print "std: " sqrt(variance)
 }
