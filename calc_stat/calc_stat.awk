@@ -7,6 +7,7 @@ BEGIN {
     median = 0
     min = 0
     max = 0
+    var = 0
 }
 
 {
@@ -31,6 +32,14 @@ END {
         }
 
         average = sum / count
+
+        for (i in values) {
+            var += ((values[i] - average) ^ 2)
+        }
+
+        if (n > 1) {
+            var = var / (n - 1)
+        }
     }
 
     print "cnt: " count
@@ -39,4 +48,6 @@ END {
     print "med: " median
     print "min: " min
     print "max: " max
+    print "var: " var
+    print "std: " sqrt(var)
 }

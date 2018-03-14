@@ -16,8 +16,8 @@ Utility folder contains sample input files.
 
 calc_stat
 ---------
-Given a sequence of numbers, calculate count, sum, average, median, minimum
-and maximum.
+Given a sequence of numbers, calculate count, sum, average, median, minimum,
+maximum, variance and standard deviation.
 
 This awk script uses gawk's asort, and hence requires gawk.
 
@@ -28,6 +28,8 @@ Sample output:
   med: 10.5
   min: -1
   max: 42
+  var: 278.38
+  std: 16.6847
 
 parse_kvpmsg
 ------------
