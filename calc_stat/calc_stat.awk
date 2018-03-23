@@ -1,7 +1,6 @@
 #!/usr/bin/awk -f
 
 BEGIN {
-    count = 0
     sum = 0
     average = 0
     median = 0
@@ -11,15 +10,14 @@ BEGIN {
 }
 
 {
-    count++
-    values[count] = $1
+    values[NR] = $1
     sum += $1
-    if ($1 < min || count == 1) { min = $1 }
+    if ($1 < min || NR == 1) { min = $1 }
     if ($1 > max) { max = $1 }
 }
 
 END {
-    if (count > 0) {
+    if (NR > 0) {
         n = asort(values)
         
         if (n % 2 == 0) {
@@ -31,7 +29,7 @@ END {
             median = values[idx + 1]
         }
 
-        average = sum / count
+        average = sum / NR
 
         for (i in values) {
             variance += ((values[i] - average) ^ 2)
@@ -42,7 +40,7 @@ END {
         }
     }
 
-    print "cnt: " count
+    print "cnt: " NR
     print "sum: " sum
     print "avg: " average
     print "med: " median
