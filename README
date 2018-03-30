@@ -2,10 +2,10 @@
 
 A set of awk utilities.
 
-make_histo
-----------
+make_barchart
+-------------
 Given a sequence of tokens, or a sequence of comma separated tokens and values,
-create a histogram of the distribtion of the tokens.
+create a bar chart of the token counts or token values.
 
 Example output given input containing the tokens xyz, abc, and rpq:
   abc     81      ==================================================

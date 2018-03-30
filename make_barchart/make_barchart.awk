@@ -19,10 +19,10 @@ BEGIN {
 
 {
     if (NF > 1) {
-        histo[$1] += $2
+        data[$1] += $2
     }
     else {
-        histo[$1]++
+        data[$1]++
     }
 }
 
@@ -30,13 +30,13 @@ END {
     PROCINFO["sorted_in"] = "@val_num_desc"
 
     max = 0
-    for (i in histo) {
-        if (histo[i] > max) {
-            max = histo[i]
+    for (i in data) {
+        if (data[i] > max) {
+            max = data[i]
         }
     }
 
-    for (i in histo) {
-        print i " \t" histo[i] " \t" barString(histo[i], max)
+    for (i in data) {
+        print i " \t" data[i] " \t" barString(data[i], max)
     }
 }
