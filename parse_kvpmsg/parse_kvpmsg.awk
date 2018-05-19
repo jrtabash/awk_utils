@@ -14,13 +14,17 @@
 # 
 function parseKVPMessage(line)
 {
-    split(line, typeAndFields, ":")
-    
-    numberOfFields = split(typeAndFields[2], fields, ",")
-    for (i = 1; i <= numberOfFields; i++) {
-        split(fields[i], nameValue, "=")
-        msgFields[nameValue[1]] = nameValue[2]
-    }
+    typeSepIdx = index(line, ":");
+    if (typeSepIdx > 0) {
+        msgType = substr(line, 1, typeSepIdx - 1)
+        nameValuePairs = substr(line, typeSepIdx + 1)
 
-    onKVPMessage(typeAndFields[1], msgFields)
+        numberOfFields = split(nameValuePairs, fields, ",")
+        for (i = 1; i <= numberOfFields; i++) {
+            split(fields[i], nameValue, "=")
+            msgFields[nameValue[1]] = nameValue[2]
+        }
+        
+        onKVPMessage(msgType, msgFields)
+    }
 }
