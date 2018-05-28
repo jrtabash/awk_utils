@@ -31,6 +31,25 @@ Sample output:
   var: 278.38
   std: 16.6847
 
+flatten_data
+------------
+Given single or multi column input, flatten the input into a single line.
+For a single column input, convert into space delimited single line. For a
+multi column input, the default is to convert second column into space a
+delimited single line. The default behavior can be modified by using the
+two variables 'col' and 'first'. The variable 'col' can be used to specify
+which column to flatten, and the variable 'first' can be used to specify
+that first column should also be flattened.
+
+For example, if the output of calc_stat is used as input to flatten, then
+the following output is generated:
+
+6 96.6 16.1 10.5 -1 42 278.38 16.6847
+
+Using '-v first=1' on the same input, will generate the following output:
+
+cnt: 6 sum: 96.6 avg: 16.1 med: 10.5 min: -1 max: 42 var: 278.38 std: 16.6847
+
 parse_kvpmsg
 ------------
 Intended to be used from other gawk scripts.
