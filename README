@@ -35,7 +35,7 @@ flatten_data
 ------------
 Given single or multi column input, flatten the input into a single line.
 For a single column input, convert into space delimited single line. For a
-multi column input, the default is to convert second column into space a
+multi column input, the default is to convert second column into a space
 delimited single line. The default behavior can be modified by using the
 two variables 'col' and 'first'. The variable 'col' can be used to specify
 which column to flatten, and the variable 'first' can be used to specify
