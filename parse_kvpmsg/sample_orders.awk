@@ -8,7 +8,7 @@ BEGIN {
     maxExecPrice = 0.0
 }
 
-function onKVPMessage(type, msg) {
+function onKVPMessage(type, msg,     price) {
     switch (type) {
     case "Order":
         orderQuantity += msg["quantity"]

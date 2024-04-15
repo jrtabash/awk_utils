@@ -8,7 +8,7 @@ BEGIN {
     max = 0
 }
 
-function onKVPMessage(type, fields) {
+function onKVPMessage(type, fields,     size) {
     msgCnts[type] += 1
 
     if (type == "Order") {
@@ -16,9 +16,12 @@ function onKVPMessage(type, fields) {
     }
 
     size = fields["quantity"]
-    sum += size
-    cnt += 1
-    if (size > max) { max = size }
+    if (size) {
+        sum += size
+        cnt += 1
+
+        if (size > max) { max = size }
+    }
 }
 
 {

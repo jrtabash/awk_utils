@@ -12,7 +12,7 @@
 # line:
 #   parseKVPMessage($0)
 # 
-function parseKVPMessage(line)
+function parseKVPMessage(line,     typeSepIdx, msgType, nameValuePairs, numberOfFields, msgFields)
 {
     typeSepIdx = index(line, ":");
     if (typeSepIdx > 0) {
